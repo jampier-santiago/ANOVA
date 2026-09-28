@@ -1,6 +1,7 @@
 # Análisis Estadístico de Siniestralidad por Línea de Negocio (Caso Quan)
 
 ## Propósito
+
 Este proyecto aplica pruebas estadísticas (paramétricas y no paramétricas) para determinar si existen
 diferencias significativas en el monto de siniestralidad (`monto_siniestro`) entre las cuatro líneas de
 negocio de Quan (movilidad, mascotas, salud, hogar), y entre dos tipos de reclamo dentro de movilidad
@@ -8,16 +9,16 @@ negocio de Quan (movilidad, mascotas, salud, hogar), y entre dos tipos de reclam
 técnicas y priorización operativa por línea de negocio.
 
 ## Estructura del proyecto
+
 ```
-proyecto/
-  data/siniestros_quan_simulado.csv       # dataset simulado
-  notebooks/analisis_siniestralidad_quan.ipynb
-  README.md
-  requirements.txt
-  .gitignore
+data/siniestros_quan_simulado.csv       # dataset simulado
+notebooks/analisis_siniestralidad_quan.ipynb
+README.md
+.gitignore
 ```
 
 ## Datos
+
 `data/siniestros_quan_simulado.csv` — **conjunto de datos simulado** (2000 registros), generado con la
 estructura organizacional real de Quan pero calibrado a benchmarks públicos reales de severidad de
 siniestros por ramo (no son registros reales de producción, por confidencialidad). Variables:
@@ -25,6 +26,7 @@ siniestros por ramo (no son registros reales de producción, por confidencialida
 Las fuentes de calibración utilizadas para simular los montos se documentan en el informe académico.
 
 ## Librerías utilizadas
+
 - pandas, numpy — manipulación y simulación de datos
 - matplotlib, seaborn — visualización
 - scipy.stats — pruebas de normalidad (Shapiro-Wilk), homogeneidad de varianzas (Levene), t de Welch,
@@ -32,13 +34,14 @@ Las fuentes de calibración utilizadas para simular los montos se documentan en 
 - statsmodels — ANOVA de un factor y prueba post-hoc de Tukey HSD
 
 ## Cómo ejecutar
-Todos los comandos se ejecutan desde la raíz del proyecto (`proyecto/`).
+
+Todos los comandos se ejecutan desde la raíz del proyecto.
 
 1. Crear el entorno virtual e instalar dependencias:
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate      # Windows: .venv\Scripts\activate
-   pip install -r requirements.txt
+   pip install pandas numpy matplotlib seaborn scipy statsmodels jupyter
    ```
 2. Ejecutar el notebook completo desde la terminal:
    ```bash
@@ -48,6 +51,7 @@ Todos los comandos se ejecutan desde la raíz del proyecto (`proyecto/`).
    todas las celdas en orden (Kernel → Restart & Run All).
 
 ## Estructura del notebook
+
 1. Carga y preparación de datos
 2. Análisis exploratorio (histograma, boxplots por línea y tipo de reclamo, dispersión, gráfico de área)
 3. Verificación de supuestos (normalidad, homogeneidad de varianzas)
